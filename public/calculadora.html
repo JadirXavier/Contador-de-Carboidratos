@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Contador de Carboidratos</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="cabeçalho-titulo">
+        <h1>Calcule seus carboidratos!</h1>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculadora.html">Calculadora</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="pesquisa">
+        <h1>Calcular carboidratos</h1>
+        <h2>
+          Insira os alimentos da refeição para calcular os carboidratos totais.
+        </h2>
+        <div class="search-box">
+          <img src="images/search.png" class="icon-img" />
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Busque por um alimento"
+            autocomplete="off"
+          />
+        </div>
+        <div class="search-list">
+          <ul id="search-results"></ul>
+          <table id="selected-foods" class="tabela-procura">
+            <thead>
+              <tr>
+                <th>Alimento</th>
+                <th class="centralizar">Porção (g)</th>
+                <th class="centralizar">Carboidratos</th>
+                <th class="centralizar"></th>
+              </tr>
+            </thead>
+            <tbody id="food-list"></tbody>
+          </table>
+        </div>
+        <div class="total">
+          <table class="tabela">
+            <tr>
+              <td class="centralizar">Carboidratos Totais</td>
+              <td id="gramas-totais" class="centralizar"></td>
+            </tr>
+          </table>
+        </div>
+
+        <script src="script.js"></script>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+<!-- <script>
+                      onkeyup="sendData(this)"
+          function sendData(e) {
+            const searchResults = document.getElementById("searchResults");
+            fetch("/getNutrients", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ payload: e.value }),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                let payload = data.payload;
+                searchResults.innerHTML = "";
+                if (payload.length < 1) {
+                  searchResults.innerHTML = "<p>Sorry. Nothing Found</p>";
+                  return;
+                }
+                payload.forEach((item, index) => {
+                  if (index > 0) searchResults.innerHTML += "<hr>";
+                  searchResults.innerHTML += `<p>${item.name}</p>`;
+                });
+                return;
+              });
+          }
+        </script> -->
