@@ -31,6 +31,7 @@ if (searchInput) {
           inputPorcao.min = "0";
           inputPorcao.max = "9999";
           inputPorcao.value = "";
+          inputPorcao.maxLength = 4;
           inputPorcao.classList.add("input");
           tdPorcao.appendChild(inputPorcao);
 
@@ -44,19 +45,21 @@ if (searchInput) {
             }
 
             const tdsGramas = document.querySelectorAll(".tdGramas");
-            console.log(tdsGramas);
+
             const somaGramas = Array.from(tdsGramas).reduce(
               (acumulador, td) => {
                 const valorNumerico = parseFloat(
                   td.textContent.replace("g", "")
                 );
-
-                return acumulador + valorNumerico;
+                if (isNaN(acumulador + valorNumerico)) {
+                  return 0;
+                } else {
+                  return acumulador + valorNumerico;
+                }
               },
               0
             );
             gramasTotais.textContent = somaGramas.toFixed(2) + "g";
-            console.log(gramasTotais.textContent);
           }
 
           const tdGramas = document.createElement("td");
@@ -78,23 +81,8 @@ if (searchInput) {
               selected.splice(index, 1);
             }
             tr.remove();
-            const tdsGramas = document.querySelectorAll(".tdGramas");
-            console.log(tdsGramas);
-            // soma o valor numérico de todas as tds
-            const somaGramas = Array.from(tdsGramas).reduce(
-              (acumulador, td) => {
-                // extrai o valor numérico da td (sem o "g" no final)
-                const valorNumerico = parseFloat(
-                  td.textContent.replace("g", "")
-                );
-                // soma o valor numérico ao acumulador
 
-                return acumulador + valorNumerico;
-              },
-              0
-            );
-            gramasTotais.textContent = somaGramas.toFixed(2) + "g";
-            console.log(gramasTotais.textContent);
+            calculaValores(tdFechar);
           });
 
           tr.appendChild(tdNome);
@@ -110,6 +98,11 @@ if (searchInput) {
           }
 
           inputPorcao.addEventListener("input", () => {
+            const maxLength = 4;
+
+            if (inputPorcao.value.length > maxLength) {
+              inputPorcao.value = inputPorcao.value.slice(0, maxLength);
+            }
             removeZerosEsquerda(inputPorcao);
             calculaValores(inputPorcao);
           });
@@ -128,54 +121,3 @@ if (searchInput) {
     }
   });
 }
-
-// let soma = 0;
-// for (let i = 0; i < tds.length; i++) {
-//   soma += parseFloat(tds[i].textContent);
-// }
-
-// // Verifica se a linha de total já existe
-// const totalRow = document.querySelector(".total");
-
-// // Se não existir, cria uma nova linha de total
-// if (!totalRow) {
-//   const table = document.querySelector("table");
-//   const newRow = table.insertRow();
-//   newRow.classList.add("total");
-
-//   const cell1 = newRow.insertCell();
-//   cell1.textContent = "Total";
-
-//   const cell2 = newRow.insertCell();
-//   cell2.textContent = soma;
-// }
-
-// if (searchInput) {
-//   searchInput.addEventListener("input", async () => {
-//     const query = searchInput.value.trim();
-//     if (query.length < 3) {
-//       searchResults.innerHTML = "";
-//       return;
-//     }
-//     try {
-//       const response = await fetch(`/nutrients?q=${query}`);
-//       const nutrients = await response.json();
-//       searchResults.innerHTML = "";
-//       for (const nutrient of nutrients) {
-//         const li = document.createElement("li");
-//         li.textContent = `${nutrient.nome} (${nutrient.carboidratos}g)`;
-//         li.addEventListener("click", () => {
-//           selected.push(nutrient);
-//           const selectedLi = document.createElement("li");
-//           selectedLi.textContent = `${nutrient.nome} (${nutrient.carboidratos}g)`;
-//           selectedFoods.appendChild(selectedLi);
-//           searchInput.value = "";
-//           searchResults.innerHTML = "";
-//         });
-//         searchResults.appendChild(li);
-//       }
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   });
-// }
