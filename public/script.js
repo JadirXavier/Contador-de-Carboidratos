@@ -23,14 +23,15 @@ if (searchInput) {
           selected.push(nutrient);
           const tr = document.createElement("tr");
           const tdNome = document.createElement("td");
+          tdNome.classList.add("tdNome");
           tdNome.textContent = nutrient.nome;
           const tdPorcao = document.createElement("td");
-          tdPorcao.classList.add("centralizar");
+          tdPorcao.classList.add("tdPorcao");
           const inputPorcao = document.createElement("input");
           inputPorcao.type = "number";
           inputPorcao.min = "0";
           inputPorcao.max = "9999";
-          inputPorcao.value = "";
+          inputPorcao.value = "0";
           inputPorcao.maxLength = 4;
           inputPorcao.classList.add("input");
           tdPorcao.appendChild(inputPorcao);
@@ -63,7 +64,7 @@ if (searchInput) {
           }
 
           const tdGramas = document.createElement("td");
-          tdGramas.classList.add("centralizar");
+          tdGramas.textContent = "0.00" + "g";
           tdGramas.classList.add("tdGramas");
 
           const gramasIniciais = parseFloat(
@@ -73,7 +74,7 @@ if (searchInput) {
           );
 
           const tdFechar = document.createElement("td");
-          tdFechar.classList.add("centralizar");
+          tdFechar.classList.add("tdFechar");
           tdFechar.textContent = "\u274C";
           tdFechar.addEventListener("click", () => {
             const index = selected.indexOf(nutrient);
