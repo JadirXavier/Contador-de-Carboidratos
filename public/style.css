@@ -216,21 +216,44 @@ main h2 {
 .tabela-procura {
   margin: 2rem 0;
   width: 100%;
+  border: 1px solid black;
 }
 
-.search-list .tabela-procura tr {
+.search-list .tabela-procura {
+  width: 100%;
   border: 1px solid black;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 60fr 15fr 20fr 5fr;
 }
 
 .tabela-procura thead {
   background: var(--cornav);
+  color: var(--cortexto1);
+}
+
+.tabela-procura thead tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  white-space: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
 
 .tabela-procura tbody {
   background: white;
+}
+
+.tabela-procura tbody :first-child(2) {
+  background: gray;
+}
+
+.tabela-procura tbody tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
 
 .tabela-procura td,
@@ -239,15 +262,9 @@ main h2 {
 }
 
 .centralizar {
-  height: 100% - var(--padding-tabela) / 2;
-  text-align: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  vertical-align: middle;
-}
-
-.centralizar input {
-  border: none;
-  text-align: center;
 }
 
 .total {
@@ -262,7 +279,6 @@ main h2 {
 
 .total tr {
   width: 100%;
-  margin-left: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
