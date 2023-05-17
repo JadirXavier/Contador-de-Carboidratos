@@ -231,7 +231,10 @@ main h2 {
 
 .tabela-procura thead tr {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 0.25rem;
+  grid-template-columns:
+    minmax(200px, 5fr) minmax(100px, 1fr) minmax(125px, 1fr)
+    minmax(50px, 0.5fr);
   white-space: nowrap;
   align-content: center;
   justify-content: center;
@@ -249,7 +252,10 @@ main h2 {
 
 .tabela-procura tbody tr {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 0.25rem;
+  grid-template-columns:
+    minmax(200px, 5fr) minmax(100px, 1fr) minmax(125px, 1fr)
+    minmax(50px, 0.5fr);
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -259,6 +265,7 @@ main h2 {
 .tabela-procura td,
 .tabela-procura th {
   padding: var(--padding-tabela);
+  width: auto;
 }
 
 .centralizar {
