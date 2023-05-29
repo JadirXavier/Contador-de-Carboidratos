@@ -21,6 +21,8 @@ input[type="number"] {
   --corsearch: #f6f1f1;
   --cortexto1: #000000;
   --padding-tabela: 1rem;
+  --espacamento-tabela: minmax(40%, 70%) minmax(20%, 10%) minmax(30%, 15%)
+    minmax(10%, 5%);
 }
 
 body {
@@ -60,6 +62,7 @@ nav {
   justify-content: space-evenly;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
+  z-index: 1;
 }
 
 li {
@@ -136,7 +139,9 @@ main h2 {
 }
 
 /* Calculadora */
-
+table {
+  border: 1px solid black;
+}
 .pesquisa {
   display: flex;
   text-align: center;
@@ -216,12 +221,6 @@ main h2 {
 .tabela-procura {
   margin: 2rem 0;
   width: 100%;
-  border: 1px solid black;
-}
-
-.search-list .tabela-procura {
-  width: 100%;
-  border: 1px solid black;
 }
 
 .tabela-procura thead {
@@ -232,9 +231,7 @@ main h2 {
 .tabela-procura thead tr {
   display: grid;
   column-gap: 0.25rem;
-  grid-template-columns:
-    minmax(200px, 5fr) minmax(100px, 1fr) minmax(125px, 1fr)
-    minmax(50px, 0.5fr);
+  grid-template-columns: var(--espacamento-tabela);
   white-space: nowrap;
   align-content: center;
   justify-content: center;
@@ -253,9 +250,7 @@ main h2 {
 .tabela-procura tbody tr {
   display: grid;
   column-gap: 0.25rem;
-  grid-template-columns:
-    minmax(200px, 5fr) minmax(100px, 1fr) minmax(125px, 1fr)
-    minmax(50px, 0.5fr);
+  grid-template-columns: var(--espacamento-tabela);
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -295,10 +290,63 @@ main h2 {
 
 .total td {
   background: var(--cornav);
-  border: 1px solid black;
   padding: var(--padding-tabela);
 }
 
 #gramas-totais {
   background: white;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0px;
+  }
+
+  #food-list {
+    background: var(--corbody);
+  }
+
+  #food-list td {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .tdPorcao input {
+    text-align: center;
+  }
+  .tdNome {
+    border: 1px solid black;
+    background: var(--cornav);
+  }
+
+  .tdFechar {
+    border-bottom: 1px solid black;
+  }
+
+  .tdPorcao,
+  .tdGramas,
+  .tdFechar {
+    background: white;
+  }
+
+  .tabela-procura thead {
+    display: none;
+  }
+
+  .tabela-procura tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .tabela-procura tbody td {
+    display: block;
+    text-align: center;
+  }
+
+  .tabela {
+    border: 1px solid black;
+  }
+
+  #gramas-totais {
+    border-top: 1px solid black;
+  }
 }
