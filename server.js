@@ -39,6 +39,8 @@ app.get("/nutrients", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => {
+const port = process.env.PORT || 3000;
+
+app.listen(port, "0.0.0.0", () => {
   console.log(`Servidor iniciado na porta ${process.env.PORT}`);
 });
