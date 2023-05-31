@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("dotenv").config();
+const path = require("path");
 
 const app = express();
 
@@ -18,6 +19,15 @@ const Nutrient = mongoose.model("Nutrient", {
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+app.get("/:page", (req, res) => {
+  const page = req.params.page;
+  res.sendFile(__dirname + "/public/" + page + ".html");
+});
 
 app.get("/nutrients", async (req, res) => {
   try {
