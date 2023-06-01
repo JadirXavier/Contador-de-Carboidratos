@@ -294,6 +294,7 @@ table {
 }
 
 #gramas-totais {
+  border-top: 1px solid black;
   background: white;
 }
 
