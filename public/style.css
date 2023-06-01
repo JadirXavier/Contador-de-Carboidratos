@@ -349,4 +349,19 @@ table {
   #gramas-totais {
     border-top: 1px solid black;
   }
+
+  h1,
+  .pesquisa h1 {
+    font-size: 1.5rem;
+  }
+
+  h2,
+  .pesquisa h2,
+  nav a {
+    font-size: 1rem;
+  }
+
+  ::placeholder {
+    font-size: 0.9rem;
+  }
 }
