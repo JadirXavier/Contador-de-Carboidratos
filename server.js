@@ -24,9 +24,12 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/:page", (req, res) => {
-  const page = req.params.page;
-  res.sendFile(__dirname + "/public/" + page + ".html");
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+app.get("/calculadora", (req, res) => {
+  res.sendFile(__dirname + "/public/calculadora.html");
 });
 
 app.get("/nutrients", async (req, res) => {
