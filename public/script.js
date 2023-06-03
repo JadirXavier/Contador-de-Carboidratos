@@ -38,6 +38,7 @@ if (searchInput) {
 
           function calculaValores(input) {
             const valorInput = parseInt(input.value);
+
             if (input.value == "") {
               tdGramas.textContent = "0.00" + "g";
             } else {
@@ -97,6 +98,18 @@ if (searchInput) {
               input.value = parseInt(input.value).toString();
             }
           }
+
+          inputPorcao.addEventListener("input", () => {
+            inputPorcao.value = inputPorcao.valueAsNumber;
+          });
+
+          inputPorcao.addEventListener("keydown", (event) => {
+            const exclusões = ["+", "-", "e", ",", "."];
+
+            if (exclusões.includes(event.key)) {
+              event.preventDefault();
+            }
+          });
 
           inputPorcao.addEventListener("input", () => {
             const maxLength = 4;
