@@ -138,6 +138,9 @@ main h2 {
   font-weight: bold;
 }
 
+
+
+
 /* Calculadora */
 table {
   border: 1px solid black;
@@ -298,6 +301,10 @@ table {
   background: white;
 }
 
+
+
+
+
 @media screen and (max-width: 600px) {
   table {
     border: 0px;
@@ -366,3 +373,17 @@ table {
     font-size: 0.9rem;
   }
 }
+
+footer { 
+   background-color: var(--cornav); 
+   display: flex; 
+   height: 4rem; 
+   align-content: center; 
+   justify-content: center; 
+   flex-wrap: wrap; 
+   font-weight: 800; 
+ } 
+  
+ footer p { 
+   color: var(--cortexto1); 
+ }
