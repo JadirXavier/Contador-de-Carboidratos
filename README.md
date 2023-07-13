@@ -43,4 +43,5 @@ Este projeto está licenciado sob a Licença MIT.
 
 # Contato
 
-:construction:  Em construção  :construction:
+- 👨‍💻 Portfólio [link](https://jadirxavier.github.io/portfolio/)
+
