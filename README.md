@@ -17,11 +17,9 @@
 Website simples com uma breve explicação sobre a contagem de carboidratos, junto com uma calculadora de carboidratos.
 
 # Próximas Etapas
+- Valores para unidades simples de alimento: Informar valores de carboidratos para valores simples de cada alimento(1 unidade, 1 copo, etc).
 - Refatorar e reorganizar o código: Realizar melhorias no código existente para torná-lo mais legível, modular e eficiente.
 - Reescrever o algoritmo de pesquisa: Avaliar e aprimorar o algoritmo de pesquisa atualmente utilizado na calculadora. 
-- Ajustar a parte visual das páginas para dispositivos mobile: Realizar ajustes e adaptações no layout e design das páginas da calculadora para garantir uma experiência de uso agradável e funcional em dispositivos móveis.
-- Criar um domínio para o site: Registrar um domínio personalizado para o site da calculadora, tornando-o mais profissional e acessível.
-
 
 # Funcionalidades
 
@@ -33,11 +31,11 @@ Website simples com uma breve explicação sobre a contagem de carboidratos, jun
 
 # Acesso ao projeto
 
-:construction:  Em construção  :construction:
+https://contador-de-carboidratos.onrender.com/
 
 # Tecnologias utilizadas
 
-HTML, CSS e JavaScript
+HTML, CSS, JavaScript, Node.js e MongoDB
 
 # Licença
 
