@@ -301,6 +301,22 @@ table {
   background: white;
 }
 
+footer { 
+    background-color: var(--cornav);
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 4rem;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-weight: 800;
+ } 
+  
+ footer p { 
+   color: var(--cortexto1); 
+ }
 
 
 
@@ -374,16 +390,4 @@ table {
   }
 }
 
-footer { 
-   background-color: var(--cornav); 
-   display: flex; 
-   height: 4rem; 
-   align-content: center; 
-   justify-content: center; 
-   flex-wrap: wrap; 
-   font-weight: 800; 
- } 
-  
- footer p { 
-   color: var(--cortexto1); 
- }
+
