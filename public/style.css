@@ -304,7 +304,7 @@ table {
 footer { 
     background-color: var(--cornav);
     display: flex;
-    position: absolute;
+    position: relative;
     bottom: 0;
     height: 4rem;
     width: 100%;
