@@ -104,9 +104,10 @@ nav ul {
 main {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
+  min-height: 100vh;
+  align-content: flex-start;
   padding: 2rem;
+  justify-content: center;
 }
 
 main h1 {
@@ -301,18 +302,16 @@ table {
   background: white;
 }
 
-footer { 
-    background-color: var(--cornav);
-    display: flex;
-    position: relative;
-    bottom: 0;
-    height: 4rem;
-    width: 100%;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-weight: 800;
- } 
+footer {
+  background-color: var(--cornav);
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: 800;
+}
   
  footer p { 
    color: var(--cortexto1); 
