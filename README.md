@@ -14,7 +14,7 @@
 
 # Descrição do Projeto
 
-Website simples com uma breve explicação sobre a contagem de carboidratos, junto com uma calculadora de carboidratos.
+Website simples com uma breve explicação sobre a contagem de carboidratos, junto com uma calculadora de carboidratos. As informações contídas no banco de dados foram obtidas com uso de um Web Scrapper.
 
 # Próximas Etapas
 - Valores para unidades simples de alimento: Informar valores de carboidratos para valores simples de cada alimento(1 unidade, 1 copo, etc).
