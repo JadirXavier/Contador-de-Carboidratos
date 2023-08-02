@@ -139,9 +139,6 @@ main h2 {
   font-weight: bold;
 }
 
-
-
-
 /* Calculadora */
 table {
   border: 1px solid black;
@@ -304,21 +301,35 @@ table {
 
 footer {
   background-color: var(--cornav);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 4rem;
   width: 100%;
   align-content: center;
-  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  font-weight: 800;
+  font-weight: 500;
+  justify-items: center;
 }
-  
- footer p { 
-   color: var(--cortexto1); 
- }
 
+footer p,
+footer a {
+  color: var(--cortexto1);
+  text-decoration: none;
+  padding: 0.5rem;
+}
 
+.contato {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+}
 
+.contato img {
+  height: 100%;
+  max-height: 2rem;
+  aspect-ratio: 1;
+}
 
 @media screen and (max-width: 600px) {
   table {
@@ -387,6 +398,13 @@ footer {
   ::placeholder {
     font-size: 0.9rem;
   }
+
+  footer p,
+  footer a {
+    font-size: 0.75rem;
+  }
+
+  .contato img {
+    max-height: 1.5rem;
+  }
 }
-
-
