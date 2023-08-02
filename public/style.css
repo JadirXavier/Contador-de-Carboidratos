@@ -309,20 +309,29 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   font-weight: 500;
-  justify-items: center;
+
 }
 
-footer p,
-footer a {
+footer > p{
   color: var(--cortexto1);
   text-decoration: none;
-  padding: 0.5rem;
+  padding: 0 0.5rem 0 1.5rem;
+  justify-self: start;
+}
+
+footer > a {
+  color: var(--cortexto1);
+  text-decoration: none;
+  padding: 0 1.5rem 0 0.5rem;
+  justify-self: end;
 }
 
 .contato {
   display: flex;
   padding: 0.5rem;
   align-items: center;
+	justify-content: center;
+   gap: 0.75rem;
 }
 
 .contato img {
@@ -404,7 +413,22 @@ footer a {
     font-size: 0.75rem;
   }
 
+footer > p{
+  justify-self: center;
+}
+
+footer > a {
+  justify-self: center;
+}
+
   .contato img {
     max-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  footer p
+  {
+    font-size: 0.65rem;
   }
 }
