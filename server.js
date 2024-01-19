@@ -24,12 +24,12 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
-
 app.get("/calculadora", (req, res) => {
   res.sendFile(__dirname + "/public/calculadora.html");
+});
+
+app.get("/dedicatoria", (req, res) => {
+  res.sendFile(__dirname + "/public/dedicatoria.html");
 });
 
 app.get("/nutrients", async (req, res) => {
